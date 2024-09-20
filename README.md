@@ -91,12 +91,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ![Home](./Images/Home.png)
 
 ### Meeting View
-![Question](./Images/meeting.png)
+![meeting](./Images/meeting.png)
 
 
 ### Previous Meeting Page
-![Home](./Images/Previousmeeting.png)
+![previousmeeting](./Images/Previousmeeting.png)
 
 ### SignUp Page
-![Question](./Images/Signup.png)
+![signup](./Images/Signup.png)
 
