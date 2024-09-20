@@ -95,8 +95,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 
 ### Previous Meeting Page
-![previous meeting](./Images/Previous meeting.png)
+![previous meeting](./Images/Previousmeeting.png)
 
 ### SignUp Page
-![sign up](./Images/Sign up.png)
+![sign up](./Images/Signup.png)
 
