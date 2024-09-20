@@ -84,3 +84,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
+
+## Screenshots
+
+### Home Page
+![Home](./Images/Home.png)
+
+### Meeting View
+![meeting](./Images/meeting.png)
+
+
+### Previous Meeting Page
+![Previousmeeting](./Images/Previousmeeting.png)
+
+### SignUp Page
+![Signup](./Images/Signup.png)
+
