@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 'use client';
 
+// Importing necessary libraries and components
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 import HomeCard from './HomeCard';
 import MeetingModal from './MeetingModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
@@ -14,6 +14,7 @@ import ReactDatePicker from 'react-datepicker';
 import { useToast } from './ui/use-toast';
 import { Input } from './ui/input';
 
+// Initial values setup for form handling
 const initialValues = {
   dateTime: new Date(),
   description: '',
@@ -31,8 +32,13 @@ const MeetingTypeList = () => {
   const { user } = useUser();
   const { toast } = useToast();
 
+  // Function to handle meeting creation
   const createMeeting = async () => {
-    if (!client || !user) return;
+    console.log("Attempting to create a meeting...");
+    if (!client || !user) {
+      console.error("Client or user is not available.");
+      return;
+    }
     try {
       if (!values.dateTime) {
         toast({ title: 'Please select a date and time' });
@@ -60,17 +66,21 @@ const MeetingTypeList = () => {
         title: 'Meeting Created',
       });
     } catch (error) {
-      console.error(error);
+      console.error("Error creating meeting:", error);
       toast({ title: 'Failed to create Meeting' });
     }
   };
 
+  // Show loader if client or user data is not available
   if (!client || !user) return <Loader />;
 
+  // Generating meeting link for created meetings
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
 
+  // Rendering the component UI with conditional modals based on state
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {/* Cards for creating, joining, scheduling meetings */}
       <HomeCard
         img="/icons/add-meeting.svg"
         title="New Meeting"
@@ -99,6 +109,7 @@ const MeetingTypeList = () => {
         handleClick={() => router.push('/recordings')}
       />
 
+      {/* Modals for different meeting types */}
       {!callDetail ? (
         <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}
@@ -119,7 +130,7 @@ const MeetingTypeList = () => {
           </div>
           <div className="flex w-full flex-col gap-2.5">
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
-              Select date and time
+              Select Date and Time
             </label>
             <ReactDatePicker
               selected={values.dateTime}
