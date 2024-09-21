@@ -70,7 +70,7 @@ const MeetingSetup = ({
             checked={isMicCamToggled}
             onChange={(e) => setIsMicCamToggled(e.target.checked)}
           />
-          Join with mic and camera off
+          Join with mic and camera of
         </label>
         <DeviceSettings />
       </div>
