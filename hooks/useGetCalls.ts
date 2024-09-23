@@ -10,7 +10,7 @@ export const useGetCalls = () => {
 
   useEffect(() => {
     const loadCalls = async () => {
-      if (!client || !user?.id) return;
+      if (!client || !user?.i) return;
       
       setIsLoading(true);
 
@@ -26,6 +26,7 @@ export const useGetCalls = () => {
             ],
           },
         });
+        console.log(user); 
 
         setCalls(calls);
       } catch (error) {
